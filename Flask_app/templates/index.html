@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Forest Fire Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+   <h2> FOREST FIRE AREA PREDICTION </h2>
+    <button  type="submit" class=" extra" >Predicted result</button>
+     {{ prediction_text }}
+ <div class = "login-cont">
+     <div class="login" id="1">
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    <h4>Input parameters </h4>
+    	<input type="text" name="Param1" placeholder="Enter X(x-axis coordinate (1-9) " required="required" />
+        <input type="text" name="Param2" placeholder="Enter Y(y-axis coordinate(1-9) " required="required" />
+        <input type="text" name="Param3" placeholder="Enter month(Jan-Dec)" required="required" />
+        <input type="text" name="Param4" placeholder="Enter Day of week(Monday to Sunday)" required="required" />   
+    </form>
+   <br>
+   <div class="login" id="2"  >
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Param5" placeholder="Enter FFMC code" required="required" />
+        <input type="text" name="Param6" placeholder="Enter DMC code" required="required" />
+        <input type="text" name="Param7" placeholder="Enter DC code" required="required" />
+        <input type="text" name="Param8" placeholder="Enter ISI index" required="required" />        
+    </form>
+<br>
+ <div class="login" id="3"  >
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Param9" placeholder="Enter temp(in Celsius)" required="required" />
+        <input type="text" name="Param10" placeholder="Enter RH(relative humidity in %)" required="required" />
+        <input type="text" name="Param11" placeholder="Enter wind speed(Km/h)" required="required" />
+        <input type="text" name="Param12" placeholder="Enter Outside rain(mm/m^2)" required="required" />        
+    </form>
+    <br>
+    <br>
+    
+
+
+<br>
+<br>
+
+
+ </div>
+
+ </div>
+ 
+
+</body>
+</html>
